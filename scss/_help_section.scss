@@ -1,0 +1,142 @@
+.half{
+  .bg{
+    &.bg-content{
+
+      &:after{
+        //display: none;
+      }
+
+      .help{
+        &-section{
+          position: relative;
+          height: 100%;
+          z-index: 9;
+
+          &:after{
+            //content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #00324c3d;
+            z-index: 2;
+          }
+        }
+        &-inner{
+          min-height:100%;
+          position: relative;
+          z-index: 9;
+        }
+      }
+    }
+  }
+
+  &.with-extra-info{
+    overflow-x: hidden;
+    .contents{
+      z-index: 9;
+    }
+  }
+}
+
+.help{
+  &-head{
+    position: relative;
+    padding-bottom: 15px;
+  }
+  &-section{
+    &-single{
+      &:not(:last-child){
+        margin-bottom: 20px;
+        border-bottom: 1px solid #f2f2f2;
+      }
+
+      &-title{
+        font-size:22px;
+        color:#3a3939;
+        position: relative;
+        &:before{
+          content: "";
+          width: 6px;
+          height: 6px;
+          background: #c3c3c3;
+          border-radius: 50%;
+          display: inline-block;
+          margin-right: 8px;
+          position: relative;
+          top: -4px;
+        }
+      }
+
+      &-details{
+        p{
+          font-weight: 400;
+        }
+      }
+
+      &.v2{
+        @include media-breakpoint-up(lg){
+          border: 0;
+          border-left: 2px solid #ddd;
+          padding: 15px;
+          //background: #f6f7fc;
+          background: #f8f8f8;
+
+          .help-section-single-title{
+            &:before{
+              display: none;
+            }
+          }
+          p{
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    &.expandable{
+      transition: 0.4s all linear;
+      transform:translateX(100%);
+
+      &.opened{
+        transition: 0.4s all linear;
+        transform:translateX(0)
+      }
+
+      &.focused{
+        transition: 0.2s all linear;
+        transform:translateX(0) scale(0.93);
+      }
+
+      @include media-breakpoint-down(lg){
+        display: none;
+        transform:translateY(100%);
+
+        &.opened{
+          display: block;
+          transition: 0.4s all linear;
+          transform:translateY(0)
+        }
+
+        &.focused{
+          transition: 0.2s all linear;
+          transform:translateX(0) scale(0.93);
+        }
+      }
+    }
+  }
+
+  &-inner{
+    background-color: #fff;
+    border-radius: 0;
+    border: 1px solid #f8f8f8;
+    max-width: 750px;
+    margin: 0 0 0 auto;
+    padding: 30px;
+    border-right: 5px solid;
+    @media (min-width:768px){
+      padding: 40px;
+    }
+  }
+}

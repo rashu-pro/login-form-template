@@ -1,0 +1,35 @@
+{
+  "type": "module",
+  "name": "login-form-template",
+  "version": "1.0.0",
+  "description": "login form template/ admin login/ dashboard login",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "compile:sass": "sass scss:css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rashu-pro/login-form-template.git"
+  },
+  "keywords": [
+    "login",
+    "page",
+    "login",
+    "template",
+    "admin",
+    "login",
+    "dashboard",
+    "login"
+  ],
+  "author": "@rashu-pro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rashu-pro/login-form-template/issues"
+  },
+  "homepage": "https://github.com/rashu-pro/login-form-template#readme",
+  "devDependencies": {
+    "open": "^9.1.0",
+    "bootstrap": "4.3.1"
+  }
+}
